@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Nepal SVG JS API</title>
+    <script type="text/javascript" src="assets/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/mustache.js"></script>
+    <script type="text/javascript" src="assets/jquery.svg.js"></script>
+    <script type="text/javascript" src="assets/jquery.xcolor.min.js"></script>
+
+    <script type="text/javascript" src="assets/src/global_data.js"></script>
+    <script type="text/javascript" src="assets/src/helper_functions.js"></script>
+    <script type="text/javascript" src="assets/src/map_data.js"></script>
+    <script type="text/javascript" src="assets/src/nepalmap.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css" media="all">
+    <link rel="stylesheet" type="text/css" href="assets/font/font-awesome.min.css" media="all">
+
+    <style>
+        .clear{
+            clear:both;
+        }
+
+        #map{
+            height:600px;
+        }
+
+        #layer-type{
+            display: none;
+        }
+        #hover{
+            display: none;
+            position: absolute;
+            opacity: 0.9;
+            border:2px solid #fff;
+            color:#fff;
+            background-color: #121621;
+            padding:3px 20px 3px 5px;
+            border-radius: 5px;
+            font-family: Georgia;
+        }
+
+        #map-title{
+            width:300px;
+            position: absolute;
+            font: 18px bold 'Helvetica';
+            display: none;
+            text-decoration: underline;
+        }
+
+        .headqtr-img{
+            width:100px;
+            height:75px;
+            float:left;
+            margin-right: 5px;
+            border:1px solid #fff;
+        }
+
+        .headqtr-txt{
+            float:right;
+            margin-top:6px
+        }
+
+    </style>
+
+    <script type="text/javascript">
+        $(function(){
+            //popnDensity from map_data.js
+            $('#map').nepalSVG({data:popnDensity})
+        })
+
+        function loadMap(data){
+            $('#map').nepalSVGReset();
+            $('#map').nepalSVG({data:data});
+        }
+    </script>
+
+</head>
+<body>
+<div class="container">
+    <br>
+    <div>
+        <a class="btn btn-success" onclick="loadMap(popnDensity)">Population Density</a>
+        <a class="btn btn-info" onclick="loadMap(annualGrowthRate)">Annual Growth Rate</a>
+    </div>
+    <div id="map">
+    </div>
+</div>
+<div id="hover">
+</div>
+<div id="map-title">
+</div>
+
+
+</body>
+
+<script id="drTemplate" type='text/mustache'>
+    {{#img}}
+    <img src="{{img}}" class='headqtr-img'>
+    {{/img}}
+    <div class='headqtr-txt'>
+        <b>{{name}}</b> <br /> Population Density: <b>{{metric}}</b> (persons/sq.km.) <br />
+        {{&text}}
+    </div>
+</script>
+
+<script id="districtTemplate" type='text/mustache'>
+    {{name}} <br /> Population Density: <b>{{metric}}</b> (persons/sq.km.)
+</script>
+
+</html>
+
+
+
