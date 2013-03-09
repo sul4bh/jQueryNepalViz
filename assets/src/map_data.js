@@ -86,7 +86,7 @@ var popnDensity = {
             rupandehi:{metric:652, text:''},
             kapilvastu:{metric:328, text:''},
             arghakhanchi:{metric:168, text:''},
-            pyuthan:{metric:180, text:''},
+            puythan:{metric:180, text:''},
             rolpa:{metric:121, text:''},
             rukum:{metric:73, text:''},
             salyan:{metric:167, text:''},
