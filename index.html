@@ -109,6 +109,22 @@
     {{name}} <br /> Population Density: <b>{{metric}}</b> (persons/sq.km.)
 </script>
 
+
+<script id="drTemplateGR" type='text/mustache'>
+    {{#img}}
+    <img src="{{img}}" class='headqtr-img'>
+    {{/img}}
+    <div class='headqtr-txt'>
+        <b>{{name}}</b> <br /> Growth Rate: <b>{{metric}}</b> % <br />
+        {{&text}}
+    </div>
+</script>
+
+<script id="districtTemplateGR" type='text/mustache'>
+    {{name}} <br /> Growth Rate: <b>{{metric}}</b> %
+</script>
+
+
 </html>
 
 

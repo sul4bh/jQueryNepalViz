@@ -142,7 +142,7 @@ var annualGrowthRate = {
                 text:'Headquarter: <b>Dipayal</b>'
             }
         },
-        template:'#drTemplate'
+        template:'#drTemplateGR'
     },
     district:{
         data:{
@@ -222,7 +222,7 @@ var annualGrowthRate = {
             baitadi:{metric:0.73, text:''},
             darchula:{metric:0.9, text:''}
         },
-        template:'#districtTemplate'
+        template:'#districtTemplateGR'
     }
 
 }
