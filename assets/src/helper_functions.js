@@ -28,7 +28,7 @@ function abbrLookup(abbr){
 }
 
 function drawLayerSelector(){
-    $("body").append('<select onclick="showHideLayers(this)" id="layerHTML" style="display: none;position: absolute"></select>');
+    $("body").append('<select onchange="showHideLayers(this)" id="layerHTML" style="display: none;position: absolute"></select>');
     for (var i = layers.length - 1; i >= 0; i--) {
         if (layers[i])
             $('#layerHTML').append('<option value='+layers[i]+' name='+layers[i]+'>'+abbrLookup(layers[i]).toCapitalize()+'</option>');
@@ -40,6 +40,7 @@ function drawLayerSelector(){
 }
 
 function showHideLayers(ele){
+    console.log(ele);
     for (var i = layersMaster.length - 1; i >= 0; i--) {
         if (layersMaster[i] == $(ele).val())
             $('.'+layersMaster[i]).show();

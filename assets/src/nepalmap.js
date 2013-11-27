@@ -41,7 +41,7 @@
 
                 setTitle(mapData.title);
 
-                $('#layerHTML').val('district').trigger('click');
+                $('#layerHTML').val('district').trigger('change');
             }
         })
 
