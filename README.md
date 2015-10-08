@@ -5,6 +5,8 @@ jQuery plugin for data visualization on administrative regions of Nepal
 
 http://sciviz.info/jquery-nepalviz/
 
+![Screenshot](https://www.evernote.com/l/ANg_TxBJTsdAL58QRmEcdi1HLvHcn8S4DyYB/image.png)
+
 
 Examples
 ========
